@@ -10,9 +10,12 @@
 </div>
 <div class="navbar bg-gray-900 h-[30px] border-b-2">
   <div class="navbar-start text-white">
-    <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <svg
+    <div class="drawer">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <!-- Page content here -->
+        <label for="my-drawer" class="btn btn-ghost drawer-button lg:hidden">        
+          <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5"
           fill="none"
@@ -23,21 +26,16 @@
             stroke-linejoin="round"
             stroke-width="2"
             d="M4 6h16M4 12h8m-8 6h16" />
-        </svg>
+        </svg></label>
       </div>
-      <ul
-        tabindex="0"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
-      </ul>
+      <div class="drawer-side z-10">
+        <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+          <!-- Sidebar content here -->
+          <li><a>Sidebar Item 1</a></li>
+          <li><a>Sidebar Item 2</a></li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="navbar-center hidden lg:flex">
@@ -46,7 +44,7 @@
       <li>
         <details>
           <summary>Profil</summary>
-          <ul class="p-2 text-black">
+          <ul class="p-2 text-black z-10">
             <li><a>Visi Misi</a></li>
             <li><a>Sejarah Desa</a></li>
             <li><a>Wilayah Desa</a></li>
@@ -57,7 +55,7 @@
       <li>
         <details>
           <summary>Lembaga Desa</summary>
-          <ul class="p-2 text-black">
+          <ul class="p-2 text-black z-10">
             <li><a>Pemerintah Desa</a></li>
             <li><a>Badan Permusyawaratan Desa</a></li>
             <li><a>Daftar RT/RW</a></li>
@@ -69,7 +67,7 @@
       <li>
         <details>
           <summary>Potensi Desa</summary>
-          <ul class="p-2 text-black">
+          <ul class="p-2 text-black z-10">
             <li><a>Potensi Unguulan</a></li>
             <li><a>Potensi Wisata</a></li>
             <li><a>Produk Desa</a></li>

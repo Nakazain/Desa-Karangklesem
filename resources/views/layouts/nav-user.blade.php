@@ -1,10 +1,9 @@
 <div class="navbar bg-base-100 h-[90px] border-b-2">
   <div>
-    <a class="ml-4"><img src="img/logo-bms.png" width="70px" height="auto"></a>
+    <a class="ml-4"><img src="/img/logo-bms.png" width="70px" height="auto"></a>
     <div class="ml-3">
     <p class="text-lg font-black">Desa Karangklesem Kecamatan Pekuncen</p>
-    <p class="text-lg font-black text-red-500 -mt-2 -mb-1">Pemerintah Kabupaten Banyumas</p>
-    <p class=" text-xs font-bold">Jl. PRAMUKA NO 645 KARANGKLESEM KEC.PEKUNCEN KODE POS 53164 TELP. 0281 572192</p>
+    <p class="text-lg font-black text-red-500 -mt-2">Pemerintah Kabupaten Banyumas</p>
   </div>
   </div>
 </div>

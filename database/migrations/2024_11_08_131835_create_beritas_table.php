@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('beritas', function (Blueprint $table) {
             $table->id();
             $table->string('username');
-            $table->text('judul');
+            $table->string('judul');
             $table->text('deskripsi');
             $table->string('image')->nullable();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');

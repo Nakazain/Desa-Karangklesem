@@ -13,6 +13,7 @@
   <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="/css/main.css">
   <!-- Scripts -->
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   
@@ -31,35 +32,13 @@
 
 
     <main>
-      <div class="container mx-auto p-4 lg:px-48">
         {{ $slot }}
-      </div>
     </main>
     <footer>
       <!-- Footer -->
     </footer>
   </div>
 
-  <script>
-    let currentIndex = 0;
-    const carousel = document.getElementById('carousel');
-    const slides = document.querySelectorAll('.carousel-item');
-
-    function updateCarousel() {
-      const width = slides[0].clientWidth;
-      carousel.style.transform = `translateX(-${currentIndex * width}px)`;
-    }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateCarousel();
-    }
-
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      updateCarousel();
-    }
-    window.addEventListener('resize', updateCarousel);
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

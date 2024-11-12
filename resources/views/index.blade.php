@@ -1,5 +1,5 @@
 <x-main-layout title="Beranda">
-  <div class="grid grid-cols-2 gap-6">
+  {{-- <div class="grid grid-cols-2 gap-6">
   <div class="relative lg:w-[500px] h-[300px] overflow-hidden rounded-lg">
     <div class="flex transition-transform ease-in-out duration-500" id="carousel">
       @foreach ($posts as $item)
@@ -21,5 +21,32 @@
 
     
   </div>
+</div> --}}
+
+<div class="grid justify-items-center bg-welcome">
+  <h1 class="text-center text-white text-3xl -my-20 mt-24">Selamat Datang di desa Karangklesem</h1>
+  <h2 class="text-white">Jl. PRAMUKA NO 645 KARANGKLESEM KEC.PEKUNCEN KODE POS 53164 TELP. 0281 572192</h2>
+  <a href="#berita" class="btn bg-black text-white hover:text-black w-[325px] scroll-link">Lihat Berita Terbaru</a>
+</div>
+
+<h2 id="berita" class="mt-20 mb-6 text-center text-2xl font-bold">Berita Karangklesem</h2>
+<div class="flex justify-center items-center min-h-screen pb-96">
+  <div class="grid grid-cols-3 gap-4 place-content-center">
+  @foreach ($posts as $item)
+  <a href="/berita/{{$item->id}}"">
+  <div class="card card-compact bg-base-100 w-96 group relative cursor-pointer overflow-hidden shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg">
+    <figure>
+      <img
+        src="/storage/{{ $item->image }}"
+        alt="{{$item->judul}}" width="auto" height="300px" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">{{ $item->judul }}</h2>
+      <p class=" line-clamp-2">{{$item->deskripsi}}</p>
+    </div>
+  </div></a>
+  @endforeach
+  <a class="text-center mt-4 text-xl font-bold cursor-pointer transition-all duration-300 hover:shadow-xl hover:text-white hover:bg-sky-500 hover:rounded-lg hover:py-2 col-span-3">Lihat lebih</a>
+</div>
 </div>
 </x-main-layout>

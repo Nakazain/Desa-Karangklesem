@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BeritaController::class, 'home'])->name('home');
+Route::get('/berita/{id}',[BeritaController::class,'masuk'])->name('berita');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

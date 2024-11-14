@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 class BeritaController extends Controller
 {
     public function home(){
-        $posts = Berita::latest()->paginate('6') ;
+        $posts = Berita::latest()->paginate('6');
         return view('index', compact('posts'));
     }
 

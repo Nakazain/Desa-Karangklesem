@@ -1,9 +1,9 @@
 <div class="navbar bg-base-100 h-[90px] border-b-2">
   <div>
-    <a class="ml-4"><img src="/img/logo-bms.png" width="70px" height="auto"></a>
+    <a class="ml-4 fadeRight"><img src="/img/logo-bms.png" width="70px" height="auto"></a>
     <div class="ml-3">
-    <p class="text-lg font-black">Desa Karangklesem Kecamatan Pekuncen</p>
-    <p class="text-lg font-black text-red-500 -mt-2">Pemerintah Kabupaten Banyumas</p>
+    <p class="text-lg fadeDown font-black">Desa Karangklesem Kecamatan Pekuncen</p>
+    <p class="text-lg fadeUp font-black text-red-500 -mt-2">Pemerintah Kabupaten Banyumas</p>
   </div>
   </div>
 </div>
@@ -38,8 +38,8 @@
     </div>
   </div>
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu text-white menu-horizontal px-1">
-      <li><a>Beranda</a></li>
+    <ul class="menu fadeDown text-white menu-horizontal px-1">
+      <li><a href="/">Beranda</a></li>
       <li>
         <details>
           <summary>Profil</summary>

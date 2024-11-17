@@ -7,7 +7,7 @@
   </div>
   </div>
 </div>
-<div class="navbar bg-gray-900 h-[30px] border-b-2">
+<div class="navbar z-50 bg-gray-900 h-[30px] border-b-2">
   <div class="navbar-start text-white">
     <div class="drawer">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
@@ -39,68 +39,35 @@
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu fadeDown text-white menu-horizontal px-1">
-      <li><a href="/">Beranda</a></li>
-      <li>
-        <details>
-          <summary>Profil</summary>
-          <ul class="p-2 text-black z-10">
-            <li><a>Visi Misi</a></li>
-            <li><a>Sejarah Desa</a></li>
-            <li><a>Wilayah Desa</a></li>
-            <li><a>Tokoh sejarah</a></li>
-          </ul>
-        </details>
-      </li>
-      <li>
-        <details>
-          <summary>Lembaga Desa</summary>
-          <ul class="p-2 text-black z-10">
-            <li><a>Pemerintah Desa</a></li>
-            <li><a>Badan Permusyawaratan Desa</a></li>
-            <li><a>Daftar RT/RW</a></li>
-            <li><a>Tokoh sejarah</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Peraturan Desa</a></li>
-      <li>
-        <details>
-          <summary>Potensi Desa</summary>
-          <ul class="p-2 text-black z-10">
-            <li><a>Potensi Unguulan</a></li>
-            <li><a>Potensi Wisata</a></li>
-            <li><a>Produk Desa</a></li>
-          </ul>
-        </details>
-      </li>
-      <li>
-        <details>
-          <summary>Menu Publik</summary>
-          <ul class="p-2 text-black">
-            <li><a>Berita</a></li>
-            <li><a>Informasi</a></li>
-            <li><a>Pengumuman</a></li>
-            <li><a>Undangan</a></li>
-            <li><a>Buku Tamu</a></li>
-            <li><a>Pengaduan</a></li>
-            <li><a>Agenda Kegiatan</a></li>
-            <li><a>Hubungi kami</a></li>
-            <li><a>Galeri</a></li>
-          </ul>
-        </details>
-      </li>
-      <li>
-        <details>
-          <summary>Pelayanan</summary>
-          <ul class="p-2 text-black">
-            <li><a>Pernikahan</a></li>
-            <li><a>Akte Kelahiran</a></li>
-            <li><a>Lain Lain</a></li>
-          </ul>
-        </details>
-      </li>
+        <li><a href="/">Beranda</a></li>
+        <li class="relative group z-50">
+            <a href="/profil" class="cursor-pointer">Profil</a>
+        </li>
+        <li class="relative group">
+            <a class="cursor-pointer">Profil Desa</a>
+            <ul class="absolute left-0 top-full hidden group-hover:block p-2 text-black bg-white shadow-lg z-50">
+                <li><a href="/profil">Visi Misi</a></li>
+                <li><a href="#">Sruktur Organisasi Pemerintahan Desa</a></li>
+            </ul>
+        </li>
+        <li class="relative group">
+            <a class="cursor-pointer">Lembaga Desa</a>
+            <ul class="absolute left-0 top-full hidden group-hover:block p-2 text-black bg-white shadow-lg z-50">
+                <li><a href="#">Pemerintah Desa</a></li>
+                <li><a href="#">Badan Permusyawaratan Desa</a></li>
+            </ul>
+        </li>
+        <li class="relative group">
+            <a class="cursor-pointer">Menu Publik</a>
+            <ul class="absolute left-0 top-full hidden group-hover:block p-2 text-black bg-white shadow-lg z-50">
+                <li><a href="/berita">Berita</a></li>
+                <li><a href="#">Informasi</a></li>
+                <li><a href="#">Hubungi Kami</a></li>
+                <li><a href="#">Galeri</a></li>
+            </ul>
+        </li>
     </ul>
-  </div>
+</div>
   <div class="navbar-end">
     
   </div>

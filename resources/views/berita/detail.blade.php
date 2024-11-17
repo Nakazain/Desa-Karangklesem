@@ -5,6 +5,8 @@
     <div class="w-[600px]">
     <h1 class="text-2xl font-bold">{{$post->judul}}</h1>
     <div class="text-sm">Diposting Oleh {{$post->username}} Pada {{ \Carbon\Carbon::now()->locale('id')->isoFormat(' dddd, D MMMM Y | hh:mm')}}<a> WIB</a></div>
+    <div class="text-gray-500 text-sm">Dibaca Sebanyak {{ $post->views }} kali</div>
+  
     <pre class=" font-poppins mt-6 whitespace-pre-line">{{$post->deskripsi}}</pre>
     </div>
   </div>

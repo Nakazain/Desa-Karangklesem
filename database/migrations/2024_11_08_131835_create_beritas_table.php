@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('image')->nullable();
+            $table->unsignedBigInteger('views')->default(0);
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

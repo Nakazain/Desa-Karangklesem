@@ -5,7 +5,13 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BeritaController::class, 'home'])->name('home');
+Route::get('/profil', [BeritaController::class, 'profil'])->name('profil');
+Route::get('/struktur', [BeritaController::class, 'struktur'])->name('struktur');
+Route::get('/berita', [BeritaController::class, 'berita'])->name('berita');
 Route::get('/berita/{id}',[BeritaController::class,'masuk'])->name('berita');
+Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
+Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.update');
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

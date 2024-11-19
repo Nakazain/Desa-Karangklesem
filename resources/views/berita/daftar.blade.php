@@ -8,9 +8,9 @@
           name="search" 
           placeholder="Cari berita..." 
           value="{{ request('search') }}" 
-          class="input input-bordered w-1/3"
+          class="input input-bordered w-1/3 fadeRight"
       />
-      <button type="submit" class="btn btn-primary ml-2">Cari</button>
+      <div class="fadeLeft"><button type="submit" class="btn btn-primary ml-2">Cari</button></div>
   </form>
 
   <div class="flex justify-center items-center min-h-screen pb-14">
@@ -23,6 +23,7 @@
                               <img src="/storage/{{ $item->image }}" alt="{{ $item->judul }}" width="auto" height="300px" />
                           </figure>
                           <div class="card-body">
+                              <p class="text-sm">{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->isoFormat('dddd, D MMMM Y') }} Oleh {{$item->username}}</p>
                               <p class="text-md">Dilihat {{ $item->views }} kali</p>
                               <h2 class="card-title">{{ $item->judul }}</h2>
                               <p class="line-clamp-2">{{ $item->deskripsi }}</p>

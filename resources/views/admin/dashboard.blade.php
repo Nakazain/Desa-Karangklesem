@@ -58,7 +58,7 @@
                             <div class="modal-box">
                                 <h3 class="text-lg font-bold">Yakin mau hapus?</h3>
                                 <p class="py-4">Anda akan menghapus postingan ini secara permanen. Anda yakin?</p>
-                                <div class="modal-action flex justify-between">
+                                <div class="modal-action flex justify-end">
                                     <form method="dialog">
                                         <button class="btn btn-warning">Batal</button>
                                     </form>

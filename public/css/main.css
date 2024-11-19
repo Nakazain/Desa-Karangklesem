@@ -23,6 +23,17 @@
   transform: translateX(0px);
 }
 
+.fadeLeft{
+  opacity: 0;
+  transform: translateX(50px);
+  transition:opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fadeLeft.active{
+  opacity: 1;
+  transform: translateX(0px);
+}
+
 .fadeDown{
   opacity: 0;
   transform: translateY(-30px);

@@ -3,6 +3,7 @@ function animateOnScroll() {
   const fadeZoomElements = document.querySelectorAll('.fadeZoom');
   const fadeZoomUpElements = document.querySelectorAll('.fadeDown');
   const fadeRightElements = document.querySelectorAll('.fadeRight');
+  const fadeLeftElements = document.querySelectorAll('.fadeLeft');
   const fadeDownElements = document.querySelectorAll('.fadeZoomUp');
   const fadeInUpElements = document.querySelectorAll('.fadeUp');
 
@@ -21,6 +22,7 @@ function animateOnScroll() {
   fadeZoomElements.forEach(el => observer.observe(el));
   fadeDownElements.forEach(el => observer.observe(el));
   fadeRightElements.forEach(el => observer.observe(el));
+  fadeLeftElements.forEach(el => observer.observe(el));
   fadeZoomUpElements.forEach(el => observer.observe(el));
   fadeInUpElements.forEach(el => observer.observe(el));
 }

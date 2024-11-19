@@ -116,6 +116,7 @@
           <img src="/storage/{{ $item->image }}" alt="{{$item->judul}}" width="auto" height="300px" />
         </figure>
         <div class="card-body">
+          <p class="text-sm">{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->isoFormat('dddd, D MMMM Y') }} Oleh {{$item->username}}</p>
           <p class="text-md">Dibaca {{ $item->views }} kali</p>
           <h2 class="card-title">{{ $item->judul }}</h2>
           <p class="line-clamp-2">{{ $item->deskripsi }}</p>

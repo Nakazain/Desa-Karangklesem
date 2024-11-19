@@ -42,7 +42,7 @@
         <li><a href="/">Beranda</a></li>
         <li class="relative group">
             <a class="cursor-pointer">Profil Desa</a>
-            <ul class="absolute left-0 top-full hidden group-hover:block p-2 text-black bg-white shadow-lg z-50">
+            <ul class="absolute left-0 rounded-md top-full hidden group-hover:block p-2 text-black bg-white shadow-lg">
               @if (Route::is('profil'))
                 <li><a class="scroll-link" href="#visimisi">Visi Misi</a></li>
                 <li><a class="scroll-link" href="#struktur">Sruktur Organisasi Pemerintahan Desa</a></li>

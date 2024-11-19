@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Berita;
+use App\Models\Struktur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -35,8 +36,15 @@ class BeritaController extends Controller
 
 
     public function struktur(){
-        $posts = Berita::all();  
-        return view('admin.struktur', compact('posts'));
+        $perangkat = Struktur::orderBy('sttt')->get();
+
+        // Kelompokkan data sesuai kebutuhan
+        $kepalaDesa = $perangkat->where('sttt', '1')->first();
+        $sekretaris = $perangkat->where('sttt', '2')->first();
+        $kepalaSeksi = $perangkat->where('sttt', '3');
+        $kepalaDusun = $perangkat->where('sttt', '4');
+
+        return view('admin.struktur', compact('kepalaDesa', 'sekretaris', 'kepalaSeksi', 'kepalaDusun'));
     }
 
     public function tambah(){
@@ -140,6 +148,41 @@ class BeritaController extends Controller
 
             return redirect()->route('dashboard')->with('success', 'Berita berhasil diperbarui.');
         }
-    
 
+    public function editSt($id)
+        {
+            $struktur = Struktur::findOrFail($id); // Ambil data struktur berdasarkan ID
+            return view('admin.edit', compact('struktur')); // Tampilkan form edit
+        }
+
+        public function updateSt(Request $request, $id)
+        {
+            $request->validate([
+                'Nama' => 'required|string|max:255',
+                'Jabatan' => 'required|string|max:255',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+        
+            $struktur = Struktur::findOrFail($id); // Cari data berdasarkan ID
+        
+            // Jika ada gambar baru, hapus gambar lama dan simpan yang baru
+            if ($request->file('image')) {
+                if ($struktur->image) {
+                    \Storage::delete('public/' . $struktur->image);
+                }
+                $imagePath = $request->file('image')->store('struktur', 'public');
+                $struktur->image = $imagePath;
+            }
+        
+            // Update data
+            $struktur->update([
+                'Nama' => $request->Nama,
+                'Jabatan' => $request->Jabatan,
+                'image' => $struktur->image,
+            ]);
+        
+            return redirect()->route('struktur', $id)->with('success', 'Data struktur berhasil diperbarui.');
+        }
+        
+                
 }

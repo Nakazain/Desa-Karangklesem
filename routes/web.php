@@ -11,6 +11,8 @@ Route::get('/berita', [BeritaController::class, 'berita'])->name('berita');
 Route::get('/berita/{id}',[BeritaController::class,'masuk'])->name('berita.detail');
 Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
 Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.update');
+Route::get('/struktur/{id}/edit', [BeritaController::class, 'editSt'])->name('admin.edit');
+Route::post('/struktur/{id}', [BeritaController::class, 'updateSt'])->name('admin.update');
 
 
 // Route::get('/dashboard', function () {

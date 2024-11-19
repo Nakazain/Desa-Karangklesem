@@ -8,7 +8,7 @@ Route::get('/', [BeritaController::class, 'home'])->name('home');
 Route::get('/profil', [BeritaController::class, 'profil'])->name('profil');
 Route::get('/struktur', [BeritaController::class, 'struktur'])->name('struktur');
 Route::get('/berita', [BeritaController::class, 'berita'])->name('berita');
-Route::get('/berita/{id}',[BeritaController::class,'masuk'])->name('berita');
+Route::get('/berita/{id}',[BeritaController::class,'masuk'])->name('berita.detail');
 Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
 Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.update');
 

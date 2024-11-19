@@ -48,15 +48,17 @@ document.addEventListener('DOMContentLoaded', animateOnScroll);
 // window.addEventListener('resize', updateCarousel);
 
 document.querySelectorAll('.scroll-link').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
 
-      const target = document.querySelector(this.getAttribute('href'));
-
-      target.scrollIntoView({
-          behavior: 'smooth'
-      });
-  });
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function () {

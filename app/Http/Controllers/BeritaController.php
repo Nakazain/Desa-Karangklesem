@@ -20,10 +20,19 @@ class BeritaController extends Controller
         return view('profil', compact('posts'));
     }
 
-    public function berita(){
-        $posts = Berita::all();  
-        return view('berita.daftar', compact('posts'));
-    }
+        public function berita(Request $request)
+        {
+            $query = Berita::query();
+
+            if ($request->has('search') && $request->search) {
+                $query->where('judul', 'like', '%' . $request->search . '%');
+            }
+
+            $posts = $query->latest()->paginate(6);
+
+            return view('berita.daftar', compact('posts'));
+        }   
+
 
     public function struktur(){
         $posts = Berita::all();  

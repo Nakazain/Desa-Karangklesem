@@ -17,8 +17,13 @@ class BeritaController extends Controller
     }
 
     public function profil(){
-        $posts = Berita::latest()->paginate('6');
-        return view('profil', compact('posts'));
+        $perangkat = Struktur::orderBy('sttt')->get();
+        $kepalaDesa = $perangkat->where('sttt', '1')->first();
+        $sekretaris = $perangkat->where('sttt', '2')->first();
+        $kepalaSeksi = $perangkat->where('sttt', '3');
+        $kepalaDusun = $perangkat->where('sttt', '4');
+
+        return view('profil', compact('kepalaDesa', 'sekretaris', 'kepalaSeksi', 'kepalaDusun'));
     }
 
         public function berita(Request $request)
@@ -168,7 +173,7 @@ class BeritaController extends Controller
             // Jika ada gambar baru, hapus gambar lama dan simpan yang baru
             if ($request->file('image')) {
                 if ($struktur->image) {
-                    \Storage::delete('public/' . $struktur->image);
+                    Storage::delete('public/' . $struktur->image);
                 }
                 $imagePath = $request->file('image')->store('struktur', 'public');
                 $struktur->image = $imagePath;

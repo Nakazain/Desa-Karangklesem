@@ -86,7 +86,7 @@
         </div>
       </div>
     </div>
-    <a href="#" class="text-center fadeUp lihatlebih mt-4 text-xl font-bold cursor-pointer col-span-2">Lihat Selengkapnya</a>
+    <a href="/profil#struktur" class="text-center fadeUp lihatlebih mt-4 text-xl font-bold cursor-pointer col-span-2">Lihat Selengkapnya</a>
   </div>
 </div>
 
@@ -118,7 +118,7 @@
         <div class="card-body">
           <p class="text-sm">{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->isoFormat('dddd, D MMMM Y') }} Oleh {{$item->username}}</p>
           <p class="text-md">Dibaca {{ $item->views }} kali</p>
-          <h2 class="card-title">{{ $item->judul }}</h2>
+          <h2 class="card-title line-clamp-1">{{ $item->judul }}</h2>
           <p class="line-clamp-2">{{ $item->deskripsi }}</p>
         </div>
       </div>

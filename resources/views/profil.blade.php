@@ -19,54 +19,75 @@
   {{-- Struktur Organisasi Desa --}}
   <div id="struktur"></div>
   <div class="container mx-auto p-4 mt-10">
-    <p class="text-2xl font-bold text-center p-4 mb-4">Sruktur Organisasi Pemerintahan Desa</p>
-    <div class="flex flex-col items-center space-y-10">
+    <p class="text-2xl font-bold text-center p-4 mb-4">Struktur Organisasi Pemerintahan Desa</p>
+    <div class="flex flex-col items-center space-y-10 p-4">
       <!-- Kepala Desa -->
-      <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-        <p>KEPALA DESA</p>
-        <p class="font-bold text-lg mt-2">Wisnu</p>
+      <p class="text-2xl font-bold border-b-4 p-2 border-red-500">Kepala Desa</p>
+      @if($kepalaDesa)
+      <div class="flex items-center bg-gray-100 shadow-md rounded-lg p-4 w-[350px]">
+        <img
+          src="{{ asset('storage/' . $kepalaDesa->image) }}"
+          alt="{{ $kepalaDesa->Nama }}"
+          class="w-24 h-24 object-cover rounded-md mr-4">
+        <div>
+          <p class="font-bold text-lg">{{ $kepalaDesa->Nama }}</p>
+          <p class="text-gray-600">{{ $kepalaDesa->Jabatan }}</p>
+        </div>
       </div>
-  
+      @endif
+    
       <!-- Sekretaris Desa -->
-      <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-        <p>Sekretaris Desa</p>
-        <p class="font-bold text-lg mt-2">Naudal</p>
+      <p class="text-2xl font-bold border-b-4 p-2 border-red-500">Sekretaris Desa</p>
+      @if($sekretaris)
+      <div class="flex items-center bg-gray-100 shadow-md rounded-lg p-4 w-[350px]">
+        <img
+          src="{{ asset('storage/' . $sekretaris->image) }}"
+          alt="{{ $sekretaris->Nama }}"
+          class="w-24 h-24 object-cover rounded-md mr-4">
+        <div>
+          <p class="font-bold text-lg">{{ $sekretaris->Nama }}</p>
+          <p class="text-gray-600">{{ $sekretaris->Jabatan }}</p>
+        </div>
       </div>
-  
+      @endif
+    
       <!-- Kepala Seksi -->
-      <div class="flex justify-center space-x-4">
-        <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-          <p>Kepala Seksi Kesejahteraan dan Pelayanan</p>
-          <p class="font-bold text-lg mt-2">Azom</p>
+      <p class="text-2xl font-bold border-b-4 p-2 border-red-500">Kepala Seksi</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+        @foreach($kepalaSeksi as $seksi)
+        <div class="flex items-center bg-gray-100 shadow-md rounded-lg p-4">
+          <img
+            src="{{ asset('storage/' . $seksi->image) }}"
+            alt="{{ $seksi->Nama }}"
+            class="w-24 h-24 object-cover rounded-md mr-4">
+          <div>
+            <p class="font-bold text-lg">{{ $seksi->Nama }}</p>
+            <p class="text-gray-600">{{ $seksi->Jabatan }}</p>
+          </div>
         </div>
-        <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-          <p>Kepala Seksi Pemerintahan</p>
-          <p class="font-bold text-lg mt-2">Apdipitoe</p>
-        </div>
-        <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-          <p>Kepala Urusan Umum dan Perencanaan</p>
-          <p class="font-bold text-lg mt-2">Nahker</p>
-        </div>
-        <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-          <p>Kepala Urusan Keuangan</p>
-          <p class="font-bold text-lg mt-2">Ahyar</p>
-        </div>
+        @endforeach
       </div>
-  
+    
       <!-- Kepala Dusun -->
-      <div class="flex justify-center space-x-4">
-        <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-          <p>Kepala Dusun Pada Elo</p>
-          <p class="font-bold text-lg mt-2">Nama</p>
+      <p class="text-2xl font-bold border-b-4 p-2 border-red-500">Kepala Dusun</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+        @foreach($kepalaDusun as $dusun)
+        <div class="flex items-center bg-gray-100 shadow-md rounded-lg p-4">
+          <img
+            src="{{ asset('storage/' . $dusun->image) }}"
+            alt="{{ $dusun->Nama }}"
+            class="w-24 h-24 object-cover rounded-md mr-4">
+          <div>
+            <p class="font-bold text-lg">{{ $dusun->Nama }}</p>
+            <p class="text-gray-600">{{ $dusun->Jabatan }}</p>
+          </div>
         </div>
-        <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-          <p>Kepala Dusun Empang</p>
-          <p class="font-bold text-lg mt-2">Nama</p>
-        </div>
+        @endforeach
       </div>
     </div>
+    
   </div>
-  <div id="wilayah"></div>
+<div id="wilayah"></div>
   <div class="container fadeUp mx-auto px-4 mt-10">
     <p class="text-2xl font-bold text-center mb-3">Willyah desa</p>
     <div class="flex justify-center">

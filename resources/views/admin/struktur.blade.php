@@ -26,61 +26,90 @@
         <a role="tab" class="tab tab-active">Struktur perangkat Desa</a>
       </div>
   </div>
+
   <div class="container mx-auto p-4 bg-white border-x border-b">
     <div class="container mx-auto p-4 mt-10">
       <p class="text-2xl font-bold text-center p-4 mb-4">Struktur Organisasi Pemerintahan Desa</p>
-      <div class="flex flex-col items-center space-y-10">
-      <!-- Kepala Desa -->
-      @if($kepalaDesa)
-      <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-          <p>{{ $kepalaDesa->Jabatan }}</p>
-          <p class="font-bold text-lg mt-2">{{ $kepalaDesa->Nama }}</p>
-          <a href="{{ route('admin.edit', $kepalaDesa->id) }}" 
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded mt-4 inline-block">
-            Edit
-          </a>
-      </div>
-      @endif
-
-      <!-- Sekretaris Desa -->
-      @if($sekretaris)
-      <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-          <p>{{ $sekretaris->Jabatan }}</p>
-          <p class="font-bold text-lg mt-2">{{ $sekretaris->Nama }}</p>
-          <a href="{{ route('admin.edit', $sekretaris->id) }}" 
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded mt-4 inline-block">
-            Edit
-          </a>
-      </div>
-      @endif
-
-      <!-- Kepala Seksi -->
-      <div class="flex justify-center space-x-4">
+      <div class="flex flex-col items-center space-y-10 p-4">
+        <!-- Kepala Desa -->
+        <p class="text-2xl font-bold border-b-4 p-2 border-red-500">Kepala Desa</p>
+        @if($kepalaDesa)
+        <div class="flex items-center bg-gray-100 shadow-md rounded-lg p-4 w-[350px]">
+          <img
+            src="{{ asset('storage/' . $kepalaDesa->image) }}"
+            alt="{{ $kepalaDesa->Nama }}"
+            class="w-24 h-24 object-cover rounded-md mr-4">
+          <div>
+            <p class="font-bold text-lg">{{ $kepalaDesa->Nama }}</p>
+            <p class="text-gray-600">{{ $kepalaDesa->Jabatan }}</p>
+            <a href="{{ route('admin.edit', $kepalaDesa->id) }}" 
+              class="text-blue-500 hover:underline text-sm mt-2 block">
+              Edit
+            </a>
+          </div>
+        </div>
+        @endif
+      
+        <!-- Sekretaris Desa -->
+        <p class="text-2xl font-bold border-b-4 p-2 border-red-500">Sekretaris Desa</p>
+        @if($sekretaris)
+        <div class="flex items-center bg-gray-100 shadow-md rounded-lg p-4 w-[350px]">
+          <img
+            src="{{ asset('storage/' . $sekretaris->image) }}"
+            alt="{{ $sekretaris->Nama }}"
+            class="w-24 h-24 object-cover rounded-md mr-4">
+          <div>
+            <p class="font-bold text-lg">{{ $sekretaris->Nama }}</p>
+            <p class="text-gray-600">{{ $sekretaris->Jabatan }}</p>
+            <a href="{{ route('admin.edit', $sekretaris->id) }}" 
+              class="text-blue-500 hover:underline text-sm mt-2 block">
+              Edit
+            </a>
+          </div>
+        </div>
+        @endif
+      
+        <!-- Kepala Seksi -->
+        <p class="text-2xl font-bold border-b-4 p-2 border-red-500">Kepala Seksi</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
           @foreach($kepalaSeksi as $seksi)
-          <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-              <p>{{ $seksi->Jabatan }}</p>
-              <p class="font-bold text-lg mt-2">{{ $seksi->Nama }}</p>
+          <div class="flex items-center bg-gray-100 shadow-md rounded-lg p-4">
+            <img
+              src="{{ asset('storage/' . $seksi->image) }}"
+              alt="{{ $seksi->Nama }}"
+              class="w-24 h-24 object-cover rounded-md mr-4">
+            <div>
+              <p class="font-bold text-lg">{{ $seksi->Nama }}</p>
+              <p class="text-gray-600">{{ $seksi->Jabatan }}</p>
               <a href="{{ route('admin.edit', $seksi->id) }}" 
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded mt-4 inline-block">
+                class="text-blue-500 hover:underline text-sm mt-2 block">
                 Edit
               </a>
+            </div>
           </div>
           @endforeach
-      </div>
-
-      <!-- Kepala Dusun -->
-      <div class="flex justify-center space-x-4">
+        </div>
+      
+        <!-- Kepala Dusun -->
+        <p class="text-2xl font-bold border-b-4 p-2 border-red-500">Kepala Dusun</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
           @foreach($kepalaDusun as $dusun)
-          <div class="text-center border-2 border-black bg-white rounded-md p-4 w-56">
-              <p>{{ $dusun->Jabatan }}</p>
-              <p class="font-bold text-lg mt-2">{{ $dusun->Nama }}</p>
+          <div class="flex items-center bg-gray-100 shadow-md rounded-lg p-4">
+            <img
+              src="{{ asset('storage/' . $dusun->image) }}"
+              alt="{{ $dusun->Nama }}"
+              class="w-24 h-24 object-cover rounded-md mr-4">
+            <div>
+              <p class="font-bold text-lg">{{ $dusun->Nama }}</p>
+              <p class="text-gray-600">{{ $dusun->Jabatan }}</p>
               <a href="{{ route('admin.edit', $dusun->id) }}" 
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded mt-4 inline-block">
+                class="text-blue-500 hover:underline text-sm mt-2 block">
                 Edit
               </a>
+            </div>
           </div>
           @endforeach
-      </div>
+        </div>
       </div>
     </div>
   </div>

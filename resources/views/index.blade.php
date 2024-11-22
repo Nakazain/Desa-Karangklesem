@@ -23,10 +23,10 @@
   </div>
 </div> --}}
 
-<div class="grid justify-items-center fade bg-welcome">
+<div class="grid justify-items-center bg-welcome">
   <h1 class="text-center text-white text-3xl -my-20 mt-24">Selamat Datang di desa Karangklesem</h1>
   <p class="text-center text-white text-3xl mt-2">Pemerintah Kabupaten Banyumas</p>
-  <h2 class="text-white ">Jl. PRAMUKA NO 645 KARANGKLESEM KEC.PEKUNCEN KODE POS 53164 TELP. 0281 572192</h2>
+  <h2 class="text-white">Jl. PRAMUKA NO 645 KARANGKLESEM KEC.PEKUNCEN KODE POS 53164 TELP. 0281 572192</h2>
   <a href="#berita" class="btn bg-black text-white hover:text-black w-[325px] scroll-link">Jelajahi Desa</a>
 </div>
 

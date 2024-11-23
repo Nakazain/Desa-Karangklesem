@@ -88,7 +88,7 @@
     
   </div>
 <div id="wilayah"></div>
-  <div class="container fadeUp mx-auto px-4 mt-10">
+  <div class="container mx-auto px-4 mt-10">
     <p class="text-2xl font-bold text-center mb-3">Willyah desa</p>
     <div class="flex justify-center">
       <div class="grid grid-cols-2 gap-4">

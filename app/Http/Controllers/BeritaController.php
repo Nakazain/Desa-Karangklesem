@@ -12,8 +12,13 @@ use Illuminate\Support\Facades\Storage;
 class BeritaController extends Controller
 {
     public function home(){
+        $perangkat = Struktur::orderBy('sttt')->get();
+        $kepalaDesa = $perangkat->where('sttt', '1')->first();
+        $sekretaris = $perangkat->where('sttt', '2')->first();
+        $kepalaSeksi = $perangkat->where('sttt', '3')->first();
+        $kepalaDusun = $perangkat->where('sttt', '4')->first();
         $posts = Berita::latest()->paginate('6');
-        return view('index', compact('posts'));
+        return view('index', compact('posts', 'kepalaDesa', 'sekretaris', 'kepalaSeksi', 'kepalaDusun'));
     }
 
     public function profil(){

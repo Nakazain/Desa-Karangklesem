@@ -48,7 +48,6 @@ class BeritaController extends Controller
     public function struktur(){
         $perangkat = Struktur::orderBy('sttt')->get();
 
-        // Kelompokkan data sesuai kebutuhan
         $kepalaDesa = $perangkat->where('sttt', '1')->first();
         $sekretaris = $perangkat->where('sttt', '2')->first();
         $kepalaSeksi = $perangkat->where('sttt', '3');
@@ -140,7 +139,6 @@ class BeritaController extends Controller
 
             $imagePath = $post->image;
 
-            // Jika ada file gambar baru, hapus gambar lama, dan simpan gambar baru
             if ($request->file('image')) {
                 if ($post->image) {
                     Storage::delete('public/' . $post->image);
@@ -148,7 +146,6 @@ class BeritaController extends Controller
                 $imagePath = $request->file('image')->store('berita', 'public');
             }
 
-            // Update data
             $post->update([
                 'username' => $request->username,
                 'judul' => $request->judul,
@@ -161,8 +158,8 @@ class BeritaController extends Controller
 
     public function editSt($id)
         {
-            $struktur = Struktur::findOrFail($id); // Ambil data struktur berdasarkan ID
-            return view('admin.edit', compact('struktur')); // Tampilkan form edit
+            $struktur = Struktur::findOrFail($id);
+            return view('admin.edit', compact('struktur'));
         }
 
         public function updateSt(Request $request, $id)
@@ -173,9 +170,8 @@ class BeritaController extends Controller
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
         
-            $struktur = Struktur::findOrFail($id); // Cari data berdasarkan ID
+            $struktur = Struktur::findOrFail($id);
         
-            // Jika ada gambar baru, hapus gambar lama dan simpan yang baru
             if ($request->file('image')) {
                 if ($struktur->image) {
                     Storage::delete('public/' . $struktur->image);
@@ -184,7 +180,6 @@ class BeritaController extends Controller
                 $struktur->image = $imagePath;
             }
         
-            // Update data
             $struktur->update([
                 'Nama' => $request->Nama,
                 'Jabatan' => $request->Jabatan,

@@ -91,8 +91,8 @@
   <div class="container mx-auto px-4 mt-10">
     <p class="text-2xl font-bold text-center mb-3">Willyah desa</p>
     <div class="flex justify-center">
-      <div class="grid grid-cols-2 gap-4">
-        <div class="card bg-base-100 w-[500px] shadow-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-5xl">
+        <div class="card bg-base-100 w-full md:w-[500px] shadow-xl">
           <div class="card-body">
             <h2 class="card-title border-b-2 pb-2">Desa Karangklesem</h2>
             <div class="grid grid-cols-2 gap-4">

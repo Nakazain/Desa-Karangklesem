@@ -1,9 +1,10 @@
 <x-main-layout title="Beranda">
-<div class="grid justify-items-center bg-welcome w-full max-w-[500px] md:max-w-none mx-auto px-4 py-10 md:py-20">
-  <h1 class="text-center text-white font-bold text-3xl md:text-3xl -my-10 md:my-0 mt-16 md:mt-24">
+<div class="flex justify-center items-center bg-welcome h-[80vh] w-full max-w-[500px] md:max-w-none">
+  <div class="text-center">
+  <h1 class="text-white font-bold text-3xl md:text-3xl md:my-0">
     Selamat Datang di desa Karangklesem
   </h1>
-  <p class="text-center text-white text-lg md:text-3xl mt-2">
+  <p class="text-white text-lg md:text-3xl">
     Pemerintah Kabupaten Banyumas
   </p>
   <h2 class="text-white text-xs md:text-base text-center">
@@ -14,6 +15,7 @@
   </a>
 </div>
 
+  </div>
 <div class="coontainer mx-auto px-4 md:px-10 mt-10">
   <p class="text-3xl fade font-bold">SOTK</p>
   <p>Struktur Organisasi dan Tata Kerja Desa Karangklesem</p>
@@ -67,7 +69,7 @@
     @endif
 
     @if($kepalaDusun)
-    <div class="tooltip" data-tip="Wisnu Cantra (Jabatan)">
+    <div class="tooltip" data-tip="{{ $kepalaDusun->Nama }} ({{ $kepalaDusun->Jabatan }})">
       <div class="card card-side animnaik text-start bg-base-100 shadow-xl">
         <figure>
           <img
